@@ -69,9 +69,9 @@ map te :tabe<CR>
 map th :-tabnext<CR>
 map tl :+tabnext<CR>
 
-"Press space twice to jump to the next '<>' and edit it
+"Press j twice to jump to the next '<>' and edit it
 "PLACE HOLDER
-inoremap <space><space> <Esc>/<><CR>:nohlsearch<CR>c2l
+inoremap <buffer> jj <Esc>/<><CR>:nohlsearch<CR>c2l
 
 
 "Buffer control
@@ -236,7 +236,7 @@ Plugin 'morhetz/gruvbox'
 
 "auto complete
 "Plugin 'ycm-core/YouCompleteMe'
-Plugin 'wellle/tmux-complete.vim'
+"Plugin 'wellle/tmux-complete.vim'
 Plugin 'honza/vim-snippets'
 
 "Enter select
@@ -265,7 +265,7 @@ Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 
 "debug
-Plugin 'puremourning/vimspector'
+" Plugin 'puremourning/vimspector'
 Plugin 'metakirby5/codi.vim'
 
 "Editor
@@ -274,6 +274,8 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+"Firenvim - broswer
+Plugin 'glacambre/firenvim'
 call vundle#end()
 filetype plugin indent on
 
@@ -284,9 +286,10 @@ filetype plugin indent on
 set laststatus=2 "always show status
 "let g:airline_powerline_fonts = 1 "suport powerline font
 let g:airline#extensions#tablin#enable = 1 "show window and buffer
+let g:airline_theme = "bubblegum"
 
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 "nerdTree
 :map ff :NERDTree<CR>
@@ -304,10 +307,7 @@ nnoremap U :UndotreeToggle<CR>
 map mp :MarkdownPreview<CR>
 
 "wsl-copy
-map yk : Wsly<CR>
-
-"coc-yank
-nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+"map yk : Wsly<CR>
 
 "multiple cursor
 let g:multi_cursor_start_word_key      = 'N'
@@ -369,6 +369,20 @@ let g:vim_markdown_new_list_item_indent = 0
 "codi.vim
 map cd :Codi!!<CR> 
 
+"coc.nvim ========
+"coc-yank
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+"=======================
 "       Themes
 "=======================
 "colorscheme snazzy
