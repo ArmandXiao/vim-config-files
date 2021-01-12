@@ -131,6 +131,8 @@ endfunc
 "===================================
 "       Vim基本配置
 "===================================
+set clipboard+=unnamedplus
+g:clipboard
 set relativenumber
 set cursorline
 set wildmenu
@@ -250,7 +252,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'iamcco/markdown-preview.nvim'
 
 
-Plugin 'christianfosli/wsl-copy'
+" Plugin 'christianfosli/wsl-copy'
+Plugin 'christoomey/vim-system-copy'
 Plugin 'neoclide/coc.nvim'
 Plugin 'junegunn/vim-peekaboo'
 

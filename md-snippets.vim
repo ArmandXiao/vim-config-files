@@ -2,7 +2,7 @@
 autocmd Filetype markdown inoremap <buffer> jj <Esc>/<><CR>:nohlsearch<CR>"_c2l
 autocmd Filetype markdown inoremap <buffer> ;w <Esc>/ <><CR>:nohlsearch<CR>"_c3l<CR>
 "autocmd Filetype markdown inoremap <buffer> ;n ---<Enter><Enter>
-autocmd Filetype markdown inoremap <buffer> ;b **** <><Esc>2b2li
+autocmd Filetype markdown inoremap <buffer> ;j **** <><Esc>2b2li
 autocmd Filetype markdown inoremap <buffer> ;s ~~~~ <><Esc>F~hi
 autocmd Filetype markdown inoremap <buffer> ;i ** <><Esc>F*i
 autocmd Filetype markdown inoremap <buffer> ;d `` <><Esc>F`i
