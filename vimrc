@@ -15,6 +15,8 @@ noremap J 5j
 noremap K 5k
 noremap b <nop>
 
+nnoremap z gf
+
 "remap ESC
 inoremap jk <ESC>
 vnoremap <tab> <ESC>
@@ -73,6 +75,8 @@ map tl :+tabnext<CR>
 "PLACE HOLDER
 inoremap <buffer> jj <Esc>/<><CR>:nohlsearch<CR>c2l
 
+"select all
+nnoremap <C-a> ggVG
 
 "Buffer control
 map <space>1 :b 1<CR>
@@ -131,8 +135,6 @@ endfunc
 "===================================
 "       Vim基本配置
 "===================================
-set clipboard+=unnamedplus
-g:clipboard
 set relativenumber
 set cursorline
 set wildmenu
@@ -261,7 +263,7 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mbbill/undotree'
-Plugin 'pechorin/any-jump.vim'
+"Plugin 'pechorin/any-jump.vim'
 Plugin 'preservim/nerdtree'
 
 "line changed in git
@@ -326,9 +328,6 @@ nnoremap <silent> ? :call NERDComment(0,"toggle")<CR>
 
 let g:NERDCustomDelimiters = {'c': {'left': '//'}, 'py': {'left': '#'},'c++': {'left': '//'}}
 
-"any-jump
-nnoremap <space>; :AnyJump<CR>
-
 "fuzzy finder
 nnoremap F :Files 
 nnoremap H :History<CR>
@@ -376,14 +375,14 @@ map cd :Codi!!<CR>
 "coc-yank
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"coc completion
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 "=======================
 "       Themes
