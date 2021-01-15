@@ -323,7 +323,7 @@ let g:multi_cursor_prev_key            = 'B'
 let g:vim_markdown_fenced_languages = ['c=c','python3=py']
 
 "nerdCommenter
-vnoremap <silent> / :call NERDComment(0,"toggle")<CR>
+vnoremap <silent> ? :call NERDComment(0,"toggle")<CR>
 nnoremap <silent> ? :call NERDComment(0,"toggle")<CR>
 
 let g:NERDCustomDelimiters = {'c': {'left': '//'}, 'py': {'left': '#'},'c++': {'left': '//'}}
