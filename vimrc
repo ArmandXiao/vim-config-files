@@ -15,6 +15,7 @@ noremap J 5j
 noremap K 5k
 noremap b <nop>
 
+nnoremap L $
 nnoremap z gf
 
 "remap ESC
@@ -53,10 +54,6 @@ inoremap "<space> ""<><ESC>2hi
 inoremap (<space> ()<><ESC>2hi
 inoremap [<space> []<><ESC>2hi
 inoremap {<space> {<CR>}<CR><><ESC>kO
-
-"markdown
-inoremap p<space>p ![<>](<>/<>)<ESC>0
-vnoremap B <ESC>`>a**<ESC>`<i**<ESC>
 
 "toggle fold
 nnoremap f<space> za
