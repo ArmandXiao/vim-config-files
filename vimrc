@@ -5,22 +5,25 @@
 source ~/.vim/md-snippets.vim
 
 "WSL vim cursor
-let &t_SI.="\e[5 q"
-let &t_SR.="\e[4 q"
-let &t_EI.="\e[1 q"
+"let &t_SI.="\e[5 q"
+"let &t_SR.="\e[4 q"
+"let &t_EI.="\e[1 q"
 
 "remap of direction keys
-noremap h b
 noremap J 5j
 noremap K 5k
-noremap b <nop>
+"noremap b <nop>
 
-nnoremap L $
+map L $
+map H 0
 nnoremap z gf
 
 "remap ESC
 inoremap jk <ESC>
 vnoremap <tab> <ESC>
+
+nnoremap ; :
+nnoremap ' "
 
 "quick save and quit
 map S :w<CR>
@@ -37,16 +40,16 @@ map su :set nosplitbelow<CR>:split<CR>
 map se :set splitbelow<CR>:split<CR>
 
 "change window
-map <space>j <C-w>j
-map <space>k <C-w>k
-map <space>h <C-w>h
-map <space>l <C-w>l
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 
 "resize windows
 map <up> :res +5<CR>
 map <down> :res -5<CR>
-map <left> :vertical resize-5<CR>
-map <right> :vertical resize+5<CR>
+map <left> :vertical resize+5<CR>
+map <right> :vertical resize-5<CR>
 
 "brackets
 inoremap '<space> ''<><ESC>2hi
@@ -87,7 +90,7 @@ map <space>8 :b 8<CR>
 map <space>9 :b 9<CR>
 
 " Compile function
-noremap r :call CompileRunGcc()<CR>
+noremap R :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
@@ -132,6 +135,8 @@ endfunc
 "===================================
 "       Vim基本配置
 "===================================
+set clipboard+=unnamedplus
+
 set relativenumber
 set cursorline
 set wildmenu
@@ -260,7 +265,7 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mbbill/undotree'
-"Plugin 'pechorin/any-jump.vim'
+Plugin 'pechorin/any-jump.vim'
 Plugin 'preservim/nerdtree'
 
 "line changed in git
@@ -268,7 +273,7 @@ Plugin 'airblade/vim-gitgutter'
 
 "debug
 " Plugin 'puremourning/vimspector'
-Plugin 'metakirby5/codi.vim'
+" Plugin 'metakirby5/codi.vim'
 
 "Editor
 Plugin 'editorconfig/editorconfig-vim'
@@ -277,7 +282,11 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
 "Firenvim - broswer
-Plugin 'glacambre/firenvim'
+"Plugin 'glacambre/firenvim'
+
+"Icon
+"Plugin 'ryanoasis/vim-devicons'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -326,8 +335,7 @@ nnoremap <silent> ? :call NERDComment(0,"toggle")<CR>
 let g:NERDCustomDelimiters = {'c': {'left': '//'}, 'py': {'left': '#'},'c++': {'left': '//'}}
 
 "fuzzy finder
-nnoremap F :Files 
-nnoremap H :History<CR>
+nnoremap F :Files <CR>
 
 "tmux-complete
 let g:tmuxcomplete#trigger = 'omnifunc'
@@ -369,6 +377,7 @@ let g:vim_markdown_new_list_item_indent = 0
 map cd :Codi!!<CR> 
 
 "coc.nvim ========
+let g:mkdp_browser = 'qutebrowser'
 "coc-yank
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
@@ -377,9 +386,9 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 "=======================
 "       Themes
