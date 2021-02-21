@@ -15,6 +15,8 @@ noremap J 5j
 noremap K 5k
 noremap b <nop>
 
+map L $
+
 nnoremap z gf
 
 "remap ESC
@@ -53,10 +55,6 @@ inoremap "<space> ""<><ESC>2hi
 inoremap (<space> ()<><ESC>2hi
 inoremap [<space> []<><ESC>2hi
 inoremap {<space> {<CR>}<CR><><ESC>kO
-
-"markdown
-inoremap p<space>p ![<>](<>/<>)<ESC>0
-vnoremap B <ESC>`>a**<ESC>`<i**<ESC>
 
 "toggle fold
 nnoremap f<space> za
@@ -253,9 +251,10 @@ Plugin 'terryma/vim-multiple-cursors'
 "md-preview
 Plugin 'iamcco/markdown-preview.nvim'
 
-
-" Plugin 'christianfosli/wsl-copy'
-Plugin 'christoomey/vim-system-copy'
+"for windows
+Plugin 'christianfosli/wsl-copy'
+"for linux
+"Plugin 'christoomey/vim-system-copy'
 Plugin 'neoclide/coc.nvim'
 Plugin 'junegunn/vim-peekaboo'
 
@@ -263,7 +262,7 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mbbill/undotree'
-"Plugin 'pechorin/any-jump.vim'
+Plugin 'pechorin/any-jump.vim'
 Plugin 'preservim/nerdtree'
 
 "line changed in git
@@ -280,7 +279,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
 "Firenvim - broswer
-Plugin 'glacambre/firenvim'
+"Plugin 'glacambre/firenvim'
 call vundle#end()
 filetype plugin indent on
 
@@ -312,7 +311,7 @@ nnoremap U :UndotreeToggle<CR>
 map mp :MarkdownPreview<CR>
 
 "wsl-copy
-"map yk : Wsly<CR>
+map cp : Wsly<CR>
 
 "multiple cursor
 let g:multi_cursor_start_word_key      = 'N'
@@ -323,7 +322,7 @@ let g:multi_cursor_prev_key            = 'B'
 let g:vim_markdown_fenced_languages = ['c=c','python3=py']
 
 "nerdCommenter
-vnoremap <silent> / :call NERDComment(0,"toggle")<CR>
+vnoremap <silent> ? :call NERDComment(0,"toggle")<CR>
 nnoremap <silent> ? :call NERDComment(0,"toggle")<CR>
 
 let g:NERDCustomDelimiters = {'c': {'left': '//'}, 'py': {'left': '#'},'c++': {'left': '//'}}
