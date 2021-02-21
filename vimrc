@@ -34,10 +34,10 @@ nnoremap < <<
 nnoremap > >>
 
 "split
-map sr :set splitright<CR>:vsplit<CR>
-map sl :set nosplitright<CR>:vsplit<CR>
-map su :set nosplitbelow<CR>:split<CR>
-map se :set splitbelow<CR>:split<CR>
+map <C-s>l :set splitright<CR>:vsplit<CR>
+map <C-s>h :set nosplitright<CR>:vsplit<CR>
+map <C-s>k :set nosplitbelow<CR>:split<CR>
+map <C-s>j :set splitbelow<CR>:split<CR>
 
 "change window
 map <C-j> <C-w>j
