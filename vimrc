@@ -135,6 +135,7 @@ endfunc
 "===================================
 "       Vim基本配置
 "===================================
+set termguicolors
 set clipboard+=unnamedplus
 
 set relativenumber
@@ -235,10 +236,18 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+
+"apperance
 "map <Leader>L <Plug>(easymotion-bd-"""
-Plugin 'vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-bufferline'
 "Plugin 'connorholyday/vim-snazzy'
 Plugin 'morhetz/gruvbox'
+Plugin 'joshdick/onedark.vim'
+Plugin 'mhinz/vim-startify'
+"Plugin 'norcalli/nvim-colorizer.lua'
+Plugin 'RRethy/vim-hexokinase'
 
 "auto complete
 "Plugin 'ycm-core/YouCompleteMe'
@@ -286,7 +295,11 @@ Plugin 'plasticboy/vim-markdown'
 "Plugin 'glacambre/firenvim'
 
 "Icon
-"Plugin 'ryanoasis/vim-devicons'
+"shoul have 'nerd-fonts' installed on system
+Plugin 'ryanoasis/vim-devicons'
+
+"Org mode
+Plugin 'jceb/vim-orgmode'
 
 call vundle#end()
 filetype plugin indent on
@@ -295,22 +308,23 @@ filetype plugin indent on
 "      Plugins Settings
 "================================
 "vim-airline
-set laststatus=2 "always show status
-"let g:airline_powerline_fonts = 1 "suport powerline font
-let g:airline#extensions#tablin#enable = 1 "show window and buffer
-let g:airline_theme = "bubblegum"
+set laststatus=2
+set noshowmode "disable the within nvim --INSERT --
+let g:airline_powerline_fonts=1 "suport powerline font
+let g:airline#extensions#tablin#enable=1 "show window and buffer
+let g:airline_theme = "onedark"
 
 " YouCompleteMe
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 "nerdTree
 :map ff :NERDTree<CR>
-
-let g:NERDTreeDirArrowExpandable = ' '
-let g:NERDTreeDirArrowCollapsible = 'v'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-"let g:airline_theme='molokai'
+"start nerdTree when vim is open
+autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+let NERDTreeShowBookmarks=1
 
 "Undotree
 nnoremap U :UndotreeToggle<CR>
@@ -319,7 +333,7 @@ nnoremap U :UndotreeToggle<CR>
 map mp :MarkdownPreview<CR>
 
 "wsl-copy
-map cp : Wsly<CR>
+"map cp : Wsly<CR>
 
 "multiple cursor
 let g:multi_cursor_start_word_key      = 'N'
@@ -390,11 +404,13 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 "smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 "xmap <C-k>     <Plug>(neosnippet_expand_target)
 
+"hexokinase
+let g:Hexokinase_highlighters = ['foregroundfull']
 "=======================
 "       Themes
 "=======================
 "colorscheme snazzy
-let g:gruvbox_italic=1
+"let g:gruvbox_italic=1
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
 "let g:SnazzyTransparent = 0
