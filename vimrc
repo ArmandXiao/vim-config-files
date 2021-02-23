@@ -318,7 +318,7 @@ let g:airline_theme = "onedark"
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 "nerdTree
-:map ff :NERDTree<CR>
+:map <space>f :NERDTreeToggle<CR>
 "start nerdTree when vim is open
 autocmd VimEnter * NERDTree | wincmd p
 " Exit Vim if NERDTree is the only window left.
@@ -359,13 +359,6 @@ let g:tmuxcomplete#trigger = 'omnifunc'
 let g:vimspector_enable_mappings = 'HUMAN'
 
 "Easy-motion =================
-"<Leader>f{char} to move to {char}
-map  <space>f <Plug>(easymotion-bd-f)
-nmap <space>f <Plug>(easymotion-overwin-f)
-
-"s{char}{char} to move to {char}{char}
-"nmap s <Plug>(easymotion-overwin-f2)
-
 "Move to line
 map <space>n <Plug>(easymotion-bd-jk)
 nmap <space>n <Plug>(easymotion-overwin-line)
