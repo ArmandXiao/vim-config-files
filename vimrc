@@ -247,7 +247,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'mhinz/vim-startify'
 "Plugin 'norcalli/nvim-colorizer.lua'
-Plugin 'RRethy/vim-hexokinase'
+"Plugin 'RRethy/vim-hexokinase'
 
 "auto complete
 "Plugin 'ycm-core/YouCompleteMe'
@@ -296,7 +296,7 @@ Plugin 'plasticboy/vim-markdown'
 
 "Icon
 "shoul have 'nerd-fonts' installed on system
-Plugin 'ryanoasis/vim-devicons'
+"Plugin 'ryanoasis/vim-devicons'
 
 "Org mode
 Plugin 'jceb/vim-orgmode'
@@ -333,7 +333,7 @@ nnoremap U :UndotreeToggle<CR>
 map mp :MarkdownPreview<CR>
 
 "wsl-copy
-"map cp : Wsly<CR>
+map cp : Wsly<CR>
 
 "multiple cursor
 let g:multi_cursor_start_word_key      = 'N'
