@@ -34,10 +34,10 @@ nnoremap < <<
 nnoremap > >>
 
 "split
-map <C-s>l :set splitright<CR>:vsplit<CR>
-map <C-s>h :set nosplitright<CR>:vsplit<CR>
-map <C-s>k :set nosplitbelow<CR>:split<CR>
-map <C-s>j :set splitbelow<CR>:split<CR>
+map <space>l :set splitright<CR>:vsplit<CR>
+map <space>h :set nosplitright<CR>:vsplit<CR>
+map <space>k :set nosplitbelow<CR>:split<CR>
+map <space>j :set splitbelow<CR>:split<CR>
 
 "change window
 map <C-j> <C-w>j
@@ -56,7 +56,7 @@ inoremap '<space> ''<><ESC>2hi
 inoremap "<space> ""<><ESC>2hi
 inoremap (<space> ()<><ESC>2hi
 inoremap [<space> []<><ESC>2hi
-inoremap {<space> {<CR>}<CR><><ESC>kO
+inoremap {<CR> {<CR>}<CR><ESC>kO
 
 "toggle fold
 nnoremap f<space> za
