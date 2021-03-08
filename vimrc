@@ -34,10 +34,10 @@ nnoremap < <<
 nnoremap > >>
 
 "split
-map <space>l :set splitright<CR>:vsplit<CR>
-map <space>h :set nosplitright<CR>:vsplit<CR>
-map <space>k :set nosplitbelow<CR>:split<CR>
-map <space>j :set splitbelow<CR>:split<CR>
+map <space>sl :set splitright<CR>:vsplit<CR>
+map <space>sh :set nosplitright<CR>:vsplit<CR>
+map <space>sk :set nosplitbelow<CR>:split<CR>
+map <space>sj :set splitbelow<CR>:split<CR>
 
 "change window
 map <C-j> <C-w>j
@@ -384,7 +384,7 @@ let g:vim_markdown_new_list_item_indent = 0
 "map cd :Codi!!<CR> 
 
 "coc.nvim ========
-let g:mkdp_browser = 'qutebrowser'
+"let g:mkdp_browser = 'qutebrowser'
 "coc-yank
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
