@@ -34,10 +34,10 @@ nnoremap < <<
 nnoremap > >>
 
 "split
-map <space>l :set splitright<CR>:vsplit<CR>
-map <space>h :set nosplitright<CR>:vsplit<CR>
-map <space>k :set nosplitbelow<CR>:split<CR>
-map <space>j :set splitbelow<CR>:split<CR>
+map <space><space>l :set splitright<CR>:vsplit<CR>
+map <space><space>h :set nosplitright<CR>:vsplit<CR>
+map <space><space>k :set nosplitbelow<CR>:split<CR>
+map <space><space>j :set splitbelow<CR>:split<CR>
 
 "change window
 map <C-j> <C-w>j
@@ -247,7 +247,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'mhinz/vim-startify'
 "Plugin 'norcalli/nvim-colorizer.lua'
-"Plugin 'RRethy/vim-hexokinase'
+Plugin 'RRethy/vim-hexokinase'
 
 "auto complete
 "Plugin 'ycm-core/YouCompleteMe'
@@ -265,7 +265,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'iamcco/markdown-preview.nvim'
 
 "for windows
-Plugin 'christianfosli/wsl-copy'
+"Plugin 'christianfosli/wsl-copy'
 "for linux
 "Plugin 'christoomey/vim-system-copy'
 Plugin 'neoclide/coc.nvim'
@@ -282,7 +282,7 @@ Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 
 "debug
-" Plugin 'puremourning/vimspector'
+ "Plugin 'puremourning/vimspector'
 " Plugin 'metakirby5/codi.vim'
 
 "Editor
@@ -296,7 +296,7 @@ Plugin 'plasticboy/vim-markdown'
 
 "Icon
 "shoul have 'nerd-fonts' installed on system
-"Plugin 'ryanoasis/vim-devicons'
+Plugin 'ryanoasis/vim-devicons'
 
 "Org mode
 Plugin 'jceb/vim-orgmode'
@@ -333,7 +333,7 @@ nnoremap U :UndotreeToggle<CR>
 map mp :MarkdownPreview<CR>
 
 "wsl-copy
-map cp : Wsly<CR>
+"map cp : Wsly<CR>
 
 "multiple cursor
 let g:multi_cursor_start_word_key      = 'N'
