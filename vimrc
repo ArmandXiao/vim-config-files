@@ -22,6 +22,10 @@ nnoremap z gf
 inoremap jk <ESC>
 vnoremap <tab> <ESC>
 
+"remap INSERT MODE functions with CTRL
+inoremap <C-l> <ESC>A
+inoremap <C-h> <ESC>I
+
 nnoremap ; :
 nnoremap ' "
 
@@ -34,10 +38,10 @@ nnoremap < <<
 nnoremap > >>
 
 "split
-map <space>sl :set splitright<CR>:vsplit<CR>
-map <space>sh :set nosplitright<CR>:vsplit<CR>
-map <space>sk :set nosplitbelow<CR>:split<CR>
-map <space>sj :set splitbelow<CR>:split<CR>
+map <space><space>l :set splitright<CR>:vsplit<CR>
+map <space><space>h :set nosplitright<CR>:vsplit<CR>
+map <space><space>k :set nosplitbelow<CR>:split<CR>
+map <space><space>j :set splitbelow<CR>:split<CR>
 
 "change window
 map <C-j> <C-w>j
@@ -77,6 +81,9 @@ inoremap <buffer> jj <Esc>/<><CR>:nohlsearch<CR>c2l
 
 "select all
 nnoremap <C-a> ggVG
+
+"remap original Ctrl+A to space A
+nnoremap <space>a <C-a>
 
 "Buffer control
 map <space>1 :b 1<CR>
@@ -238,7 +245,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "apperance
-"map <Leader>L <Plug>(easymotion-bd-"""
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-bufferline'
@@ -257,7 +263,7 @@ Plugin 'honza/vim-snippets'
 "Enter select
 Plugin 'gcmt/wildfire.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'easymotion/vim-easymotion'
+"Plugin 'easymotion/vim-easymotion'
 Plugin 'preservim/NErdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -336,9 +342,9 @@ map mp :MarkdownPreview<CR>
 map cp : Wsly<CR>
 
 "multiple cursor
-let g:multi_cursor_start_word_key      = 'N'
-let g:multi_cursor_next_key            = 'N'
-let g:multi_cursor_prev_key            = 'B'
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-b>'
 
 "markdown
 let g:vim_markdown_fenced_languages = ['c=c','python3=py']
@@ -350,7 +356,7 @@ nnoremap <silent> ? :call NERDComment(0,"toggle")<CR>
 let g:NERDCustomDelimiters = {'c': {'left': '//'}, 'py': {'left': '#'},'c++': {'left': '//'}}
 
 "fuzzy finder
-nnoremap F :Files <CR>
+nnoremap <space><space>f :Files <CR>
 
 "tmux-complete
 let g:tmuxcomplete#trigger = 'omnifunc'
@@ -358,20 +364,20 @@ let g:tmuxcomplete#trigger = 'omnifunc'
 "vim-spector
 let g:vimspector_enable_mappings = 'HUMAN'
 
-"Easy-motion =================
-"Move to line
-map <space>n <Plug>(easymotion-bd-jk)
-nmap <space>n <Plug>(easymotion-overwin-line)
-
-"Move to word
-map  <space>w <Plug>(easymotion-bd-w)
-nmap <space>w <Plug>(easymotion-overwin-w)"
-
-"match n word
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-"Easy-motion END ===============
+""Easy-motion =================
+""Move to line
+"map <space>n <Plug>(easymotion-bd-jk)
+"nmap <space>n <Plug>(easymotion-overwin-line)
+"
+""Move to word
+"map  <space>w <Plug>(easymotion-bd-w)
+"nmap <space>w <Plug>(easymotion-overwin-w)"
+"
+""match n word
+"map  / <Plug>(easymotion-sn)
+"omap / <Plug>(easymotion-tn)
+"map  n <Plug>(easymotion-next)
+""Easy-motion END ===============
 
 "markdown-vim-table
 let mapleader = ' '
