@@ -12,11 +12,13 @@ source ~/.vim/md-snippets.vim
 "remap of direction keys
 noremap J 5j
 noremap K 5k
+
+"open man page
+noremap M K
 "noremap b <nop>
 
 map L $
-map H 0
-nnoremap z gf
+map H ^
 
 "remap ESC
 inoremap jk <ESC>
@@ -61,9 +63,6 @@ inoremap "<space> ""<><ESC>2hi
 inoremap (<space> ()<><ESC>2hi
 inoremap [<space> []<><ESC>2hi
 inoremap {<CR> {<CR>}<CR><ESC>kO
-
-"toggle fold
-nnoremap f<space> za
 
 "search
 "use easy-motion plugin instead
