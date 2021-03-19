@@ -32,8 +32,8 @@ nnoremap ; :
 nnoremap ' "
 
 "quick save and quit
-map S :w<CR>
-map Q :q<CR>
+map <C-s> :w<CR>
+map <C-q> :q<CR>
 
 "normal mode indentation
 nnoremap < <<
@@ -94,6 +94,11 @@ map <space>6 :b 6<CR>
 map <space>7 :b 7<CR>
 map <space>8 :b 8<CR>
 map <space>9 :b 9<CR>
+
+"QuickFix
+map <silent> <space>o :copen<CR>
+map <silent> <space>n :cnext<CR>
+map <silent> <space>N :cprevious<CR>
 
 " Compile function
 noremap R :call CompileRunGcc()<CR>
