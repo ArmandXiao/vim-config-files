@@ -33,6 +33,7 @@ nnoremap ' "
 
 "quick save and quit
 map <C-s> :w<CR>
+map Q :q<CR>
 map <C-q> :q<CR>
 
 "normal mode indentation
