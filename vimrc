@@ -12,11 +12,13 @@ source ~/.vim/md-snippets.vim
 "remap of direction keys
 noremap J 5j
 noremap K 5k
+
+"open man page
+noremap M K
 "noremap b <nop>
 
 map L $
-map H 0
-nnoremap z gf
+map H ^
 
 "remap ESC
 inoremap jk <ESC>
@@ -30,8 +32,8 @@ nnoremap ; :
 nnoremap ' "
 
 "quick save and quit
-map S :w<CR>
-map Q :q<CR>
+map <C-s> :w<CR>
+map <C-q> :q<CR>
 
 "normal mode indentation
 nnoremap < <<
@@ -61,9 +63,6 @@ inoremap "<space> ""<><ESC>2hi
 inoremap (<space> ()<><ESC>2hi
 inoremap [<space> []<><ESC>2hi
 inoremap {<CR> {<CR>}<CR><ESC>kO
-
-"toggle fold
-nnoremap f<space> za
 
 "search
 "use easy-motion plugin instead
@@ -95,6 +94,11 @@ map <space>6 :b 6<CR>
 map <space>7 :b 7<CR>
 map <space>8 :b 8<CR>
 map <space>9 :b 9<CR>
+
+"QuickFix
+map <silent> <space>o :copen<CR>
+map <silent> <space>n :cnext<CR>
+map <silent> <space>N :cprevious<CR>
 
 " Compile function
 noremap R :call CompileRunGcc()<CR>
