@@ -67,7 +67,6 @@ inoremap {<CR> {<CR>}<CR><ESC>kO
 
 "search
 "use easy-motion plugin instead
-"noremap <space>f /
 noremap <silent> <space>, :nohl<CR>
 
 "tab control
@@ -100,6 +99,9 @@ map <space>9 :b 9<CR>
 map <silent> <space>o :copen<CR>
 map <silent> <space>n :cnext<CR>
 map <silent> <space>N :cprevious<CR>
+
+"check spelling
+map cp :set spell spelllang=en_us<CR>
 
 " Compile function
 noremap R :call CompileRunGcc()<CR>
@@ -268,7 +270,7 @@ Plugin 'honza/vim-snippets'
 "Enter select
 Plugin 'gcmt/wildfire.vim'
 Plugin 'tpope/vim-surround'
-"Plugin 'easymotion/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'preservim/NErdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -379,7 +381,7 @@ let g:vimspector_enable_mappings = 'HUMAN'
 "nmap <space>w <Plug>(easymotion-overwin-w)"
 "
 ""match n word
-"map  / <Plug>(easymotion-sn)
+map  <space>/ <Plug>(easymotion-sn)
 "omap / <Plug>(easymotion-tn)
 "map  n <Plug>(easymotion-next)
 ""Easy-motion END ===============
