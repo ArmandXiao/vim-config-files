@@ -85,6 +85,9 @@ nnoremap <C-a> ggVG
 "remap original Ctrl+A to space A
 nnoremap <space>a <C-a>
 
+"spelling check
+nnoremap cp :set spell spelllang=en_us<CR>
+
 "Buffer control
 map <space>1 :b 1<CR>
 map <space>2 :b 2<CR>
@@ -268,7 +271,7 @@ Plugin 'honza/vim-snippets'
 "Enter select
 Plugin 'gcmt/wildfire.vim'
 Plugin 'tpope/vim-surround'
-"Plugin 'easymotion/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'preservim/NErdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -276,7 +279,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'iamcco/markdown-preview.nvim'
 
 "for windows
-"Plugin 'christianfosli/wsl-copy'
+Plugin 'christianfosli/wsl-copy'
 "for linux
 "Plugin 'christoomey/vim-system-copy'
 Plugin 'neoclide/coc.nvim'
@@ -307,7 +310,7 @@ Plugin 'plasticboy/vim-markdown'
 
 "Icon
 "shoul have 'nerd-fonts' installed on system
-Plugin 'ryanoasis/vim-devicons'
+"Plugin 'ryanoasis/vim-devicons'
 
 "Org mode
 Plugin 'jceb/vim-orgmode'
@@ -344,7 +347,7 @@ nnoremap U :UndotreeToggle<CR>
 map mp :MarkdownPreview<CR>
 
 "wsl-copy
-"map cp : Wsly<CR>
+map <space>cp : Wsly<CR>
 
 "multiple cursor
 let g:multi_cursor_start_word_key      = '<C-n>'
@@ -379,7 +382,7 @@ let g:vimspector_enable_mappings = 'HUMAN'
 "nmap <space>w <Plug>(easymotion-overwin-w)"
 "
 ""match n word
-"map  / <Plug>(easymotion-sn)
+map <space>/ <Plug>(easymotion-sn)
 "omap / <Plug>(easymotion-tn)
 "map  n <Plug>(easymotion-next)
 ""Easy-motion END ===============
