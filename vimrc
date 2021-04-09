@@ -397,9 +397,13 @@ let g:vim_markdown_new_list_item_indent = 0
 "map cd :Codi!!<CR> 
 
 "coc.nvim ========
-"let g:mkdp_browser = 'qutebrowser'
 "coc-yank
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+"refactory
+nmap <space>rn <Plug>(coc-rename)
+"format code
+nmap <space>rf <Plug>(coc-format-selected)
+xmap <space>rf <Plug>(coc-format-selected)
 
 "coc completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
