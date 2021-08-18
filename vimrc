@@ -180,8 +180,8 @@ set ff=unix
 call plug#begin('~/.vim/plugged')
 
 "apperance
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 "Plug 'bling/vim-bufferline'
 "Plug 'connorholyday/vim-snazzy'
 Plug 'morhetz/gruvbox'
@@ -196,10 +196,10 @@ Plug 'joshdick/onedark.vim'
 Plug 'honza/vim-snippets'
 
 "Enter select
-"Plug 'gcmt/wildfire.vim'
-"Plug 'tpope/vim-surround'
-"Plug 'easymotion/vim-easymotion'
-"Plug 'preservim/NErdcommenter'
+Plug 'gcmt/wildfire.vim'
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/NErdcommenter'
 "Plug 'terryma/vim-multiple-cursors'
 
 "md-preview
@@ -210,14 +210,14 @@ Plug 'honza/vim-snippets'
 "for linux
 "Plug 'christoomey/vim-system-copy'
 "Plug 'neoclide/coc.nvim'
-"Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/vim-peekaboo'
 
 "File Navigation
-"Plug 'junegunn/fzf'
-"Plug 'junegunn/fzf.vim'
-"Plug 'mbbill/undotree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'mbbill/undotree'
 "Plug 'pechorin/any-jump.vim'
-"Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 
 "line changed in git
 "Plug 'airblade/vim-gitgutter'
@@ -248,3 +248,108 @@ call plug#end()
 "      Plugins Settings         |
 "================================
 "vim-airline
+set laststatus=2
+set noshowmode "disable the within nvim --INSERT --
+let g:airline_powerline_fonts=1 "suport powerline font
+let g:airline#extensions#tablin#enable=1 "show window and buffer
+let g:airline_theme = "onedark"
+
+" YouCompleteMe
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+
+"nerdTree
+:map <space>f :NERDTreeToggle<CR>
+"start nerdTree when vim is open
+autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+let NERDTreeShowBookmarks=1
+
+"Undotree
+nnoremap U :UndotreeToggle<CR>
+
+"Markdown Preview
+map mp :MarkdownPreview<CR>
+
+"wsl-copy
+"map cp : Wsly<CR>
+
+"multiple cursor
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-b>'
+
+"markdown
+let g:vim_markdown_fenced_languages = ['c=c','python3=py']
+
+"nerdCommenter
+vnoremap <silent> ? :call NERDComment(0,"toggle")<CR>
+nnoremap <silent> ? :call NERDComment(0,"toggle")<CR>
+
+let g:NERDCustomDelimiters = {'c': {'left': '//'}, 'py': {'left': '#'},'c++': {'left': '//'}}
+
+"fuzzy finder
+nnoremap <space><space>f :Files <CR>
+
+"tmux-complete
+"let g:tmuxcomplete#trigger = 'omnifunc'
+
+"vim-spector
+"let g:vimspector_enable_mappings = 'HUMAN'
+
+""Easy-motion =================
+""Move to line
+"map <space>n <Plug>(easymotion-bd-jk)
+"nmap <space>n <Plug>(easymotion-overwin-line)
+"
+""Move to word
+"map  <space>w <Plug>(easymotion-bd-w)
+"nmap <space>w <Plug>(easymotion-overwin-w)"
+"
+""match n word
+map  <space>/ <Plug>(easymotion-sn)
+"omap / <Plug>(easymotion-tn)
+"map  n <Plug>(easymotion-next)
+""Easy-motion END ===============
+
+"markdown-vim-table
+let mapleader = ' '
+
+"vim-markdown
+"let g:vim_markdown_no_default_key_mappings = 1
+"let g:vim_markdown_new_list_item_indent = 0
+
+"codi.vim
+"map cd :Codi!!<CR> 
+
+"coc.nvim ========
+"coc-yank
+"nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
+"refactory
+"nmap <space>rn <Plug>(coc-rename)
+
+"format code
+"nmap <space>rf <Plug>(coc-format-selected)
+"xmap <space>rf <Plug>(coc-format-selected)
+
+"coc completion
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+"hexokinase
+"let g:Hexokinase_highlighters = ['foregroundfull']
+"=======================
+"       Themes
+"=======================
+"colorscheme snazzy
+"let g:gruvbox_italic=1
+set background=dark
+colorscheme onedark
+"let g:SnazzyTransparent = 0
