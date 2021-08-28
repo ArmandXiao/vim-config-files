@@ -1,0 +1,298 @@
+{
+    "editor.fontSize": 17,
+    "editor.lineNumbers":"relative",
+
+    // ------------------------------- vim configuration ---------------------------
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.foldfix": true,
+    "vim.leader": "<space>",
+
+    // ------------------------------- Key Bindings --------------------------------
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["J"],
+            "after": ["5","j"]
+        },
+
+        {
+            "before": ["K"],
+            "after": ["5","k"]
+        },
+
+        {
+            "before": ["L"],
+            "after": ["$"]
+        },
+
+        {
+            "before": ["H"],
+            "after": ["^"]
+        },
+
+        {
+            "before": [">"],
+            "after": [">", ">"]
+        },
+
+        {
+            "before": ["<"],
+            "after": ["<", "<"]
+        },
+
+        {
+            "before": [";"],
+            "after": [":"]
+        },
+
+        {
+            "before": ["?"],
+            "commands": ["editor.action.commentLine"]
+        },
+
+        {
+            "before": ["<leader>",","],
+            "commands": [":nohl"]
+        },
+
+        // based on EasyMotion
+        // {
+        //     "before": ["/"],
+        //     "after": ["<leader>", "<leader>", "/"]
+        // },
+
+        // window controls
+        {
+            "before": ["Q"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        
+        {
+            "before": ["<tab>"],
+            "commands": ["workbench.action.navigateEditorGroups"]
+        },
+
+        {
+            "before": ["<S-tab>"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+
+        {
+            "before": ["<leader>", "1"],
+            "commands": ["workbench.action.openEditorAtIndex1"]
+        },
+
+        {
+            "before": ["<leader>", "2"],
+            "commands": ["workbench.action.openEditorAtIndex2"]
+        },
+
+        {
+            "before": ["<leader>", "3"],
+            "commands": ["workbench.action.openEditorAtIndex3"]
+        },
+
+        {
+            "before": ["<leader>", "4"],
+            "commands": ["workbench.action.openEditorAtIndex4"]
+        },
+
+
+        {
+            "before": ["<leader>", "5"],
+            "commands": ["workbench.action.openEditorAtIndex5"]
+        },
+
+        {
+            "before": ["<leader>", "6"],
+            "commands": ["workbench.action.openEditorAtIndex6"]
+        },
+
+        // editorGroup
+        {
+            "before": ["<leader>","<leader>","h"],
+            "commands": ["workbench.action.splitEditorLeft"]
+        },
+
+        {
+            "before": ["<leader>","<leader>","j"],
+            "commands": ["workbench.action.splitEditorDown"]
+        },
+
+        {
+            "before": ["<leader>","<leader>","k"],
+            "commands": ["workbench.action.splitEditorUp"]
+        },
+
+        {
+            "before": ["<leader>","<leader>","l"],
+            "commands": ["workbench.action.splitEditorRight"]
+        },
+
+        {
+            "before": ["<C-h>"],
+            "commands": ["workbench.action.focusLeftGroup"]
+        },
+
+        {
+            "before": ["<C-l>"],
+            "commands": ["workbench.action.focusRightGroup"]
+        },
+
+        {
+            "before": ["<C-j>"],
+            "commands": ["workbench.action.focusBelowGroup"]
+        },
+
+        {
+            "before": ["<C-k>"],
+            "commands": ["workbench.action.focusAboveGroup"]
+        },
+
+        {
+            "before": ["<leader>", "a"],
+            "after": ["<C-a>"]
+        },
+        
+        {
+            "before": ["<C-a>"],
+            "after": ["g","g", "V","G"]
+        },
+
+
+    ],
+
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        },
+
+        // speical navigation with MOD key (Ctrl)
+        {
+            "before": ["<C-l>"],
+            "after": ["<Esc>","A"]
+        },
+
+        {
+            "before": ["<C-h>"],
+            "after": ["<Esc>","I"]
+        }
+
+    ],
+
+    "vim.visualModeKeyBindingsNonRecursive": [
+
+        {
+            "before": ["J"],
+            "after": ["5","j"]
+        },
+
+        {
+            "before": ["K"],
+            "after": ["5","k"]
+        },
+
+        {
+            "before": ["L"],
+            "after": ["$"]
+        },
+
+        {
+            "before": ["H"],
+            "after": ["^"]
+        },
+
+        {
+            "before": ["/"],
+            "commands": ["editor.action.commentLine","extension.vim_escape"],
+        },
+
+    ],
+
+    // --------------------------- Plugins -----------------------------------
+
+    "vim.easymotion": true,
+    // vim-airline
+    "vim.statusBarColorControl": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+
+    "vim.gdefault": true,
+
+    // ------------------------------- VIM END --------------------------------
+
+    "workbench.colorTheme": "Dracula",
+    "workbench.preferredLightColorTheme": "Default Dark+",
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontLigatures": true,
+    "background.customImages": [
+        "C:\\Users\\lingao\\Desktop\\Japan-4k-1.jpg"
+    ],
+    "background.filepath": "C:\\Users\\lingao\\Desktop\\Japan-4k-1.jpg",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.externalUriOpeners": {
+    
+    },
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderWhitespace": "all",
+    "window.menuBarVisibility": "toggle",
+    "settingsSync.ignoredExtensions": [
+    
+    ],
+    "code-runner.runInTerminal": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "todo-tree.tree.showScanModeButton": false,
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "FIXME": {
+            "background": "#ff0fc080"
+        },
+        "[ ]": {
+            "background": "#ff000080"
+        },
+        "[x]": {
+            "background": "#00ff0080"
+    }
+    },
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "terminal.integrated.rendererType": "dom",
+    "vsicons.dontShowNewVersionMessage": true,
+    "vscode-neovim.highlightGroups.highlights": {
+
+        "Directory": "vim",
+        "IncSearch": {
+            "backgroundColor": "theme.editor.findMatchBackground",
+            "borderColor": "theme.editor.findMatchBorder"
+        },
+        "Search": {
+            "backgroundColor": "theme.editor.findMatchHighlightBackground",
+            "borderColor": "theme.editor.findMatchHighlightBorder"
+        },
+        "Visual": {
+            "backgroundColor": "theme.editor.selectionBackground"
+        },
+        "Conceal": "vim",
+        "Substitute": "vim"
+    },
+    "editor.tabSize": 4,
+    "window.zoomLevel": -1,
+    "python.showStartPage": false,
+
+}
