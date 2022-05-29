@@ -206,7 +206,7 @@
         },
 
         {
-            "before": ["/"],
+            "before": ["?"],
             "commands": ["editor.action.commentLine","extension.vim_escape"],
         },
 
