@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 17,
+    "editor.fontSize": 15,
     "editor.lineNumbers":"relative",
 
     // ------------------------------- vim configuration ---------------------------
@@ -53,8 +53,14 @@
         },
 
         {
-            "before": ["<leader>",","],
+            "before": ["<leader>","n"],
             "commands": [":nohl"]
+        },
+
+        // run python file
+        {
+            "before": ["R"],
+            "commands": ["python.execInTerminal"]
         },
 
         // based on EasyMotion
@@ -71,7 +77,7 @@
         
         {
             "before": ["<tab>"],
-            "commands": ["workbench.action.navigateEditorGroups"]
+            "commands": ["workbench.action.nextEditor"]
         },
 
         {
@@ -131,36 +137,11 @@
             "commands": ["workbench.action.splitEditorRight"]
         },
 
+        // switch file
         {
-            "before": ["<C-h>"],
-            "commands": ["workbench.action.focusLeftGroup"]
+            "before": ["<leader>",","],
+            "commands": ["workbench.action.quickOpen"]
         },
-
-        {
-            "before": ["<C-l>"],
-            "commands": ["workbench.action.focusRightGroup"]
-        },
-
-        {
-            "before": ["<C-j>"],
-            "commands": ["workbench.action.focusBelowGroup"]
-        },
-
-        {
-            "before": ["<C-k>"],
-            "commands": ["workbench.action.focusAboveGroup"]
-        },
-
-        {
-            "before": ["<leader>", "a"],
-            "after": ["<C-a>"]
-        },
-        
-        {
-            "before": ["<C-a>"],
-            "after": ["g","g", "V","G"]
-        },
-
 
     ],
 
@@ -184,6 +165,7 @@
     ],
 
     "vim.visualModeKeyBindingsNonRecursive": [
+
 
         {
             "before": ["J"],
@@ -217,40 +199,15 @@
     "vim.easymotion": true,
     // vim-airline
     "vim.statusBarColorControl": false,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    },
+    // "workbench.colorCustomizations": {
+    //     "statusBar.background": "#005f5f",
+    //     "statusBar.noFolderBackground": "#005f5f",
+    //     "statusBar.debuggingBackground": "#005f5f"
+    // },
 
     "vim.gdefault": true,
 
-    // ------------------------------- VIM END --------------------------------
-
-    "workbench.colorTheme": "Dracula",
-    "workbench.preferredLightColorTheme": "Default Dark+",
-    "C_Cpp.updateChannel": "Insiders",
-    "editor.fontFamily": "Cascadia Code",
-    "editor.fontLigatures": true,
-    "background.customImages": [
-        "C:\\Users\\lingao\\Desktop\\Japan-4k-1.jpg"
-    ],
-    "background.filepath": "C:\\Users\\lingao\\Desktop\\Japan-4k-1.jpg",
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.externalUriOpeners": {
-    
-    },
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.renderWhitespace": "all",
-    "window.menuBarVisibility": "toggle",
-    "settingsSync.ignoredExtensions": [
-    
-    ],
-    "code-runner.runInTerminal": true,
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
-    },
-    "todo-tree.tree.showScanModeButton": false,
+    // --------------------------- Vim End -----------------------------------
     "todo-tree.general.tags": [
         "BUG",
         "HACK",
@@ -260,6 +217,7 @@
         "[ ]",
         "[x]"
     ],
+
     "todo-tree.highlights.customHighlight": {
         "FIXME": {
             "background": "#ff0fc080"
@@ -269,30 +227,12 @@
         },
         "[x]": {
             "background": "#00ff0080"
-    }
-    },
-    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-    "terminal.integrated.rendererType": "dom",
-    "vsicons.dontShowNewVersionMessage": true,
-    "vscode-neovim.highlightGroups.highlights": {
+        },
+    }, 
 
-        "Directory": "vim",
-        "IncSearch": {
-            "backgroundColor": "theme.editor.findMatchBackground",
-            "borderColor": "theme.editor.findMatchBorder"
-        },
-        "Search": {
-            "backgroundColor": "theme.editor.findMatchHighlightBackground",
-            "borderColor": "theme.editor.findMatchHighlightBorder"
-        },
-        "Visual": {
-            "backgroundColor": "theme.editor.selectionBackground"
-        },
-        "Conceal": "vim",
-        "Substitute": "vim"
-    },
-    "editor.tabSize": 4,
-    "window.zoomLevel": -1,
-    "python.showStartPage": false,
-
+    "workbench.colorTheme": "Default Dark+",
+    "extensions.ignoreRecommendations": true,
+    "explorer.confirmDelete": false,
+    "python.defaultInterpreterPath": "PATH TO PYTHON",
+    "window.zoomLevel": 1
 }
