@@ -56,6 +56,12 @@
             "before": ["<leader>","n"],
             "commands": [":nohl"]
         },
+        
+        // peek reference
+        {
+            "before": ["<leader>","j"],
+            "commands": ["editor.action.referenceSearch.trigger"]
+        },
 
         // run python file
         {
