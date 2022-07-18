@@ -244,12 +244,11 @@
     // LaTeX
     // "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.message.error.show": false,
-    "latex-workshop.message.warning.show": false,
 
     "latex-workshop.latex.tools": [
         {
-            "name": "xelatex",
-            "command": "xelatex",
+            "name": "pdflatex",
+            "command": "pdflatex",
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
@@ -257,22 +256,42 @@
                 "%DOCFILE%"
             ]
         },
+
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
     ],
 
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatex",
+            "name": "pdflatex",
             "tools": [
-                "xelatex"
+                "pdflatex"
             ],
         },
+
+        // used for compiling tex with bib citations
+        {
+            "name": "pdf->bib->pdf->pdf",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+
     ],
 
     "latex-workshop.view.pdf.viewer": "tab",
 
     "latex-workshop.latex.autoClean.run": "onBuilt",
     "latex-workshop.latex.clean.fileTypes": [
-        "*.aux",
+        // "*.aux", // need aux for citations
         "*.bbl",
         "*.blg",
         "*.idx",
@@ -291,13 +310,19 @@
         "*.fls",
         "*.log",
         "*.fdb_latexmk",
-        // "*.gz"
+        // "*.gz"   // need .gz for forward and reverse selection
     ],
 
     "latex-workshop.view.pdf.invert": 1,    // invert color
     "workbench.editorAssociations": {
         "*.pdf": "latex-workshop-pdf-hook"
     },
+
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.message.latexlog.exclude": [
+        "incompatible",
+        "color"
+    ],
     // ============================================= END =================================================
 
 
