@@ -63,12 +63,6 @@
             "commands": ["python.execInTerminal"]
         },
 
-        // based on EasyMotion
-        // {
-        //     "before": ["/"],
-        //     "after": ["<leader>", "<leader>", "/"]
-        // },
-
         // window controls
         {
             "before": ["Q"],
@@ -143,6 +137,12 @@
             "commands": ["workbench.action.quickOpen"]
         },
 
+        // based on EasyMotion
+        {
+            "before": ["f"],
+            "after": ["<leader>", "<leader>", "/"]
+        },
+
     ],
 
     "vim.insertModeKeyBindings": [
@@ -160,7 +160,7 @@
         {
             "before": ["<C-h>"],
             "after": ["<Esc>","I"]
-        }
+        },
 
     ],
 
@@ -197,6 +197,8 @@
     // --------------------------- Plugins -----------------------------------
 
     "vim.easymotion": true,
+    "vim.easymotionDimBackground": true,
+
     // vim-airline
     "vim.statusBarColorControl": false,
     // "workbench.colorCustomizations": {
@@ -206,14 +208,15 @@
     // },
 
     "vim.gdefault": true,
-
     // --------------------------- Vim End -----------------------------------
+
+    // --------------------------- TODO tree ----------------------------------
     "todo-tree.general.tags": [
         "BUG",
         "HACK",
         "FIXME",
         "TODO",
-        "XXX",
+        "DEBUG",
         "[ ]",
         "[x]"
     ],
@@ -229,10 +232,72 @@
             "background": "#00ff0080"
         },
     }, 
+    // --------------------------- TODO END ----------------------------------
+
+    // ----------------------------  Latex -----------------------------------
+    // LaTeX
+    // "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+    ],
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ],
+        },
+    ],
+
+    "latex-workshop.view.pdf.viewer": "tab",
+
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        // "*.gz"
+    ],
+
+    "latex-workshop.view.pdf.invert": 1,    // invert color
+    "workbench.editorAssociations": {
+        "*.pdf": "latex-workshop-pdf-hook"
+    },
+    // ============================================= END =================================================
+
 
     "workbench.colorTheme": "Default Dark+",
     "extensions.ignoreRecommendations": true,
     "explorer.confirmDelete": false,
-    "python.defaultInterpreterPath": "PATH TO PYTHON",
-    "window.zoomLevel": 1
+    "python.defaultInterpreterPath": "E:\\miniconda\\envs\\torch_env\\python.exe",
+    "window.zoomLevel": 1,
 }
