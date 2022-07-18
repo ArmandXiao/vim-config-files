@@ -79,4 +79,11 @@
         "command": "goToPreviousReference",
         "when": "inReferenceSearchEditor || referenceSearchVisible"
     },
+    
+    // latex forward selection
+    {
+        "key": "shift+alt+j",
+        "command": "latex-workshop.synctex",
+        "when": "editorTextFocus && !config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId == 'latex'"
+    },
 ]
