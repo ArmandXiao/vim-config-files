@@ -50,19 +50,16 @@
         "key": "ctrl+k ctrl+down",
         "command": "-workbench.action.focusBelowGroup"
     },
+    // suggestion
     {
         "key": "tab",
         "command": "-acceptSelectedSuggestion",
         "when": "suggestWidgetVisible && textInputFocus"
     },
+
     {
         "key": "tab",
         "command": "selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-    {
-        "key": "down",
-        "command": "-selectNextSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
@@ -70,9 +67,16 @@
         "command": "selectPrevSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
+
+    // peek reference
     {
-        "key": "up",
-        "command": "-selectPrevSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    }
+        "key": "tab",
+        "command": "goToNextReference",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "shift+tab",
+        "command": "goToPreviousReference",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
 ]
